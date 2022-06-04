@@ -12,8 +12,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
 import com.chatapp.ChatAppKafka.model.Message;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ser.std.StringSerializer;
+import org.springframework.kafka.support.serializer.JsonSerializer;
+import org.apache.kafka.common.serialization.StringSerializer;
 
 @EnableKafka
 @Configuration

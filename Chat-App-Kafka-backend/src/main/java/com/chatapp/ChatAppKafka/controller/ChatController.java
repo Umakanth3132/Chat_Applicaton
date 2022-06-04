@@ -6,6 +6,9 @@ import java.util.concurrent.ExecutionException;
 import org.apache.camel.component.kafka.KafkaConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +30,13 @@ public class ChatController {
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException(e);
         }
+    }
+	
+	@MessageMapping("/sendMessage")
+    @SendTo("/topic/group")
+    public Message broadcastGroupMessage(@Payload Message message) {
+        //Sending this message to all the subscribers
+        return message;
     }
 	
 
