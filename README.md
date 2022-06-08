@@ -1,6 +1,12 @@
 # Chat Application
 A Realtime Chat Application built using React and Kafka as MessageBroker
 
+### Clone
+Clone by copying below link
+```shell script
+https://github.com/Umakanth3132/Chat_Applicaton.git
+```
+
 ### Installation
 Before starting the project, Please download [Zookeeper](https://zookeeper.apache.org) and [Kafka](https://kafka.apache.org/).
 
