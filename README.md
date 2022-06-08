@@ -2,32 +2,33 @@
 A Realtime Chat Application built using React and Kafka as MessageBroker
 
 ### Installation
-Before starting the project, We need to download [Zookeeper](https://zookeeper.apache.org) and [Kafka](https://kafka.apache.org/).
+Before starting the project, Please download [Zookeeper](https://zookeeper.apache.org) and [Kafka](https://kafka.apache.org/).
 
 You can download Kafka from [here](https://kafka.apache.org/downloads).
 
 Extract the contents of the compressed file into a folder of your preference.
 Inside the Kafka directory, go to the `bin` folder. Here you’ll find many bash scripts that will be useful for running a Kafka application.
 
-If you are using Windows, you also have the same scripts inside the `windows` folder. This tutorial uses Linux commands, but you just need to use the equivalent Windows version if you’re running a Microsoft OS.
 
 **Zookeeper** is basically to manage the Kafka cluster. It comes bundled with the downloaded Kafka directory. So, we need not download it separately.
 
 To start the zookeeper, go to the *bin* directory and enter the below command.
 
-*Start Zookeeper*
+**Start Zookeeper**
 ```shell script
 zookeeper-server-start .\config\zookeeper.properties
 ```
 
-*Start Kafka*
-Next, To start the Kafka broker, run the below command in the same directory
+**Start Kafka**
+
+To start the Kafka broker, run the below command in the same directory
 ```shell script
 kafka-server-start .\config\server.properties
 ```
 
-*Create a Topic*
-After running Zookeeper and Apache Kafka respectively, We can create a Topic and send and receive data as Producer and Consumer.
+**Create a Topic**
+
+After running Zookeeper and Apache Kafka respectively, create a Topic and send and receive data as Producer and Consumer.
 ```
 kafka-topics --create --topic kafka-chat-1 --zookeeper localhost:2181 --replication-factor 1 --partitions 1
 ```
@@ -64,8 +65,8 @@ We will use Create React App to quickstart the app.
 
 ```
 npm install --g create-react-app
-create-react-app chat-ui
-cd chat-ui
+create-react-app chat-app-kafka-ui
+cd chat-app-kafka-ui
 ```
 Install dependencies
     * axios
