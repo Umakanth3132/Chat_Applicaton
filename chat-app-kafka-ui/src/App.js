@@ -4,7 +4,7 @@ import './App.css';
 import Input from './Components/Input/Input';
 import LoginForm from './Components/LoginForm/LoginForm';
 import Messages from './Components/Messages/Messages';
-import chatAPI from './services/chatapi';
+import chatAPI from './service/chatapi';
 import { randomColor } from './utils/common';
 
 

@@ -1,10 +1,11 @@
-package com.chatapp.ChatAppKafka.config;
+package com.chatapp.ChatAppKafka.consumer;
 
-import org.apache.camel.component.kafka.KafkaConstants;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
+import com.chatapp.ChatAppKafka.constants.*;
 
 import com.chatapp.ChatAppKafka.model.Message;
 
@@ -15,8 +16,8 @@ public class MessageListener {
     SimpMessagingTemplate template;
 
     @KafkaListener(
-            topics = KafkaConstants.TOPIC,
-            groupId = KafkaConstants.GROUP_ID;
+            topics = KafkaConstants.KAFKA_TOPIC,
+            groupId = KafkaConstants.GROUP_ID
     )
     public void listen(Message message) {
         System.out.println("sending via kafka listener..");

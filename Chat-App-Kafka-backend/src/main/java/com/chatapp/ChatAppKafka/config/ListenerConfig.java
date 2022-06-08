@@ -3,7 +3,7 @@ package com.chatapp.ChatAppKafka.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.camel.component.kafka.KafkaConstants;
+import com.chatapp.ChatAppKafka.constants.*;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
